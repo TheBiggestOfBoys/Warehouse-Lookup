@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>Warehouse Lookup</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<meta name="description" content="A lookup tool for prizes in the King's Island Gamed Warehouse." />
+	<script src="lookup.js"></script>
+</head>
+
+<body>
+	<h1>Warehouse Lookup</h1>
+
+	<div>
+		<label for="SKU">SKU # (do not include '#')</label>
+		<input type="text" placeholder="Enter prize SKU or Style #" id="styleNumber" />
+	</div>
+
+	<div>
+		<label for="company">Company Name</label>
+		<select id="company" name="company">
+			<option value="" selected>Not Sure</option>
+			<option value="Goffa">Goffa</option>
+			<option value="Fiesta">Fiesta</option>
+			<option value="ToyFactory">Toy Factory</option>
+			<option value="RINovelty">Rhode Island Novelty</option>
+		</select>
+	</div>
+
+	<div>
+		<button id="lookup">Lookup</button>
+	</div>
+</body>
+
+</html>
