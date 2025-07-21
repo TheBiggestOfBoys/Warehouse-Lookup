@@ -3,51 +3,80 @@
 
 <head>
 	<meta charset="UTF-8" />
-	<title>Warehouse Lookup</title>
+	<title>King's Island Warehouse Lookup System</title>
 	<meta name="viewport" content="width=device-width,initial-scale=1" />
 	<meta name="description" content="A lookup tool for prizes in the King's Island Gamed Warehouse." />
-	<script src="lookup.js"></script>
+	<link rel="stylesheet" href="styles.css" />
+	<script src="lookup.js" defer></script>
 </head>
 
 <body>
-	<h1>Warehouse Lookup</h1>
+	<img src="King's Island Logo.svg" alt="King's Island Logo" class="logo" />
+	<h1>Warehouse Lookup System</h1>
+	<h2>A lookup tool for prizes in the Games Warehouse.</h2>
 
-	<div>
-		<h2>A lookup tool for prizes in the King's Island Gamed Warehouse.</h2>
-
-		<h3>How to use:</h3>
-		<ul>
-			<li>Find the Style or SKU # of the product.</li>
-			<li>Type the number in the box (without the '#')</li>
+	<div class="container">
+		<details open>
+			<summary>Purpose:</summary>
 			<ul>
-				<li>The "number" might include letters and dashes</li>
+				<li>Find out more info about a prize, if you only have the SKU/Style number.</li>
+				<li>Find Name/Description of prize from SKU/Style number.</li>
+				<li>Can see what a prize looks like without opening box.</li>
+				<li>See how many are supposed to be in a box/bag.</li>
 			</ul>
-			<li>Pick the company the prize is from</li>
+		</details>
+
+		<details open>
+			<summary>How to use?</summary>
 			<ul>
-				<li>If you don't know the company, it will search all of them.</li>
+				<li>Find the Style or SKU # of the product.</li>
+				<li>Type the number in the box (without the '#')</li>
+				<li>(Typing in the name/description might work sometimes)</li>
+				<ul>
+					<li>The "number" might include letters and dashes</li>
+				</ul>
+				<li>Pick the company the prize is from</li>
+				<ul>
+					<li>If you don't know the company, it will search all of them.</li>
+				</ul>
+				<li>Click the "Lookup" button</li>
+				<li>It will open a new tab with the search results for that prize</li>
+				<ul>
+					<li>If you know the company, it will search just that company.</li>
+					<li>If you don't know the company, it will search all of them.</li>
+					<ul>
+						<li>You will just have to click through each tab until you find the correct one.</li>
+					</ul>
+				</ul>
 			</ul>
-		</ul>
+		</details>
 	</div>
 
-	<div>
-		<label for="SKU">SKU # (do not include '#')</label>
-		<input type="text" placeholder="Enter prize SKU or Style #" id="styleNumber" />
-	</div>
+	<div class="container">
+		<div class="input-row">
+			<div class="input-group">
+				<label for="SKU">SKU # (do not include '#')</label>
+				<input type="text" placeholder="Enter prize SKU or Style #" id="styleNumber" />
+			</div>
 
-	<div>
-		<label for="company">Company Name</label>
-		<select id="company" name="company">
-			<option value="" selected>Not Sure</option>
-			<option value="Goffa">Goffa</option>
-			<option value="Fiesta">Fiesta</option>
-			<option value="ToyFactory">Toy Factory</option>
-			<option value="RINovelty">Rhode Island Novelty</option>
-		</select>
-	</div>
+			<div class="input-group">
+				<label for="company">Company Name</label>
+				<select id="company" name="company">
+					<option value="" selected>Not Sure</option>
+					<!-- Companies will dynamically fill this via lookup.js -->
+				</select>
+			</div>
+		</div>
 
-	<div>
 		<button id="lookup">Lookup</button>
 	</div>
+
+	<footer>
+		<h3><B>(**Not officially developed for, or endorsed by King's Island**)</B></h3>
+		<p>&copy; 2025 Jake Scott • Warehouse Lookup Tool</p>
+		<p><a href="https://github.com/TheBiggestOfBoys/Warehouse-Lookup">Source Code</a></p>
+		<p>Last Updated: 7/20/2025</p>
+	</footer>
 </body>
 
 </html>
