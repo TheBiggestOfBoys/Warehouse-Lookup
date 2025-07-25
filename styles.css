@@ -1,57 +1,39 @@
-/* Simple King's Island Theme */
+/* King's Island Theme */
 :root {
-	--kings-island-red: #e31e24;
-	--kings-island-blue: #003366;
-	--kings-island-yellow: #ffd700;
-	--background-light: #f8f9fa;
+	--red: #e31e24;
+	--blue: #003366;
+	--light: #f8f9fa;
 }
 
 body {
-	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-	background: linear-gradient(135deg, var(--background-light) 0%, #ffffff 100%);
-	color: #333;
+	font-family: 'Segoe UI', sans-serif;
+	background: linear-gradient(135deg, var(--light) 0%, white 100%);
 	margin: 0;
 	padding: 20px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	min-height: 100vh;
+	color: #333;
 }
 
 .logo {
 	max-width: 200px;
-	height: auto;
 	margin-bottom: 20px;
 }
 
 h1 {
-	text-align: center;
-	color: var(--kings-island-red);
+	color: var(--red);
 	font-size: clamp(1.8rem, 4vw, 2.5rem);
-	margin-bottom: 10px;
-}
-
-p {
 	text-align: center;
-	color: var(--kings-island-blue);
-	font-style: italic;
-	margin-bottom: 30px;
-	font-size: clamp(0.9rem, 2vw, 1rem);
+	margin-bottom: 10px;
 }
 
 h2 {
-	color: var(--kings-island-blue);
+	color: var(--blue);
 	font-size: clamp(1.1rem, 3vw, 1.3rem);
 	text-align: center;
-	margin-bottom: 15px;
-}
-
-h3 {
-	color: #666;
-	font-size: clamp(0.8rem, 2vw, 0.9rem);
-	text-align: center;
-	margin-bottom: 10px;
-	font-weight: normal;
+	margin-bottom: 30px;
 }
 
 .container {
@@ -63,19 +45,6 @@ h3 {
 	border-radius: 12px;
 	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 	border: 1px solid rgba(227, 30, 36, 0.1);
-	backdrop-filter: blur(10px);
-	transition: all 0.3s ease;
-}
-
-.container:hover {
-	box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
-	transform: translateY(-2px);
-}
-
-.form-group {
-	display: flex;
-	flex-direction: column;
-	margin-bottom: 20px;
 }
 
 .input-row {
@@ -87,16 +56,13 @@ h3 {
 .input-group {
 	flex: 1;
 	min-width: 250px;
-	display: flex;
-	flex-direction: column;
 }
 
 label {
 	display: block;
 	font-weight: bold;
 	margin-bottom: 8px;
-	color: var(--kings-island-blue);
-	font-size: clamp(0.9rem, 2vw, 1rem);
+	color: var(--blue);
 }
 
 input,
@@ -105,144 +71,94 @@ select {
 	padding: 14px 16px;
 	border: 2px solid #ddd;
 	border-radius: 8px;
-	font-size: clamp(0.9rem, 2vw, 1rem);
-	transition: all 0.3s ease;
+	font-size: 1rem;
 	background: #fafafa;
 	box-sizing: border-box;
+	transition: all 0.3s ease;
 }
 
 input:focus,
 select:focus {
 	outline: none;
-	border-color: var(--kings-island-red);
+	border-color: var(--red);
 	background: white;
 	box-shadow: 0 0 0 3px rgba(227, 30, 36, 0.1);
-	transform: translateY(-1px);
 }
 
-input:hover,
-select:hover {
-	border-color: var(--kings-island-blue);
-	background: white;
+.button-row {
+	display: flex;
+	gap: 15px;
+	justify-content: center;
+	margin: 30px auto 0;
+	flex-wrap: wrap;
 }
 
 button {
-	background-color: var(--kings-island-red);
+	background: var(--red);
 	color: white;
 	border: none;
 	padding: 16px 32px;
-	font-size: clamp(1rem, 2.5vw, 1.2rem);
+	font-size: 1.1rem;
 	font-weight: bold;
 	border-radius: 8px;
 	cursor: pointer;
-	display: block;
-	margin: 30px auto 0;
 	min-width: 150px;
 	transition: all 0.3s ease;
 	text-transform: uppercase;
-	letter-spacing: 0.5px;
-	position: relative;
-	overflow: hidden;
-}
-
-button::before {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: -100%;
-	width: 100%;
-	height: 100%;
-	background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-	transition: left 0.5s;
-}
-
-button:hover::before {
-	left: 100%;
 }
 
 button:hover {
-	background-color: #c41e24;
+	background: #c41e24;
 	transform: translateY(-2px);
 	box-shadow: 0 4px 12px rgba(227, 30, 36, 0.3);
 }
 
-button:active {
-	transform: translateY(0);
-	box-shadow: 0 2px 6px rgba(227, 30, 36, 0.3);
+button:disabled {
+	opacity: 0.7;
+	cursor: not-allowed;
+	transform: none;
 }
 
-/* Collapsible instructions styling */
+#clear {
+	background: #666;
+}
+
+#clear:hover {
+	background: #555;
+	box-shadow: 0 4px 12px rgba(102, 102, 102, 0.3);
+}
+
+/* Collapsible sections */
 details {
 	margin-bottom: 20px;
 }
 
-details+details {
-	margin-top: 15px;
-}
-
 summary {
 	font-weight: bold;
-	color: var(--kings-island-blue);
-	font-size: clamp(1rem, 2.5vw, 1.1rem);
+	color: var(--blue);
 	cursor: pointer;
 	padding: 12px 0;
-	list-style: none;
-	position: relative;
-	transition: color 0.3s ease;
 	border-bottom: 1px solid rgba(227, 30, 36, 0.1);
 }
 
-summary::-webkit-details-marker {
-	display: none;
-}
-
-summary::before {
-	content: "▶";
-	position: absolute;
-	left: -20px;
-	transition: transform 0.3s ease;
-	color: var(--kings-island-red);
-}
-
-details[open] summary::before {
-	transform: rotate(90deg);
-}
-
 summary:hover {
-	color: var(--kings-island-red);
+	color: var(--red);
 }
 
-#instructions {
-	margin-top: 15px;
-	padding-left: 5px;
-}
-
-/* Better list styling */
 ul {
 	line-height: 1.6;
 	margin: 10px 0;
 }
 
-li {
-	margin: 6px 0;
-	padding-left: 5px;
-}
-
-ul ul {
-	margin-top: 5px;
-	margin-bottom: 5px;
-}
-
-/* Footer styling */
+/* Footer */
 footer {
 	margin-top: auto;
-	padding: 30px 20px 20px;
+	padding: 30px 20px;
 	text-align: center;
 	color: #888;
 	font-size: 0.85rem;
 	border-top: 1px solid rgba(0, 0, 0, 0.05);
 	max-width: 600px;
-	width: 100%;
 }
 
 footer p {
@@ -250,12 +166,7 @@ footer p {
 	font-style: normal;
 }
 
-footer h3 {
-	color: #999;
-	margin-bottom: 15px;
-}
-
-/* Responsive design */
+/* Mobile */
 @media (max-width: 768px) {
 	body {
 		padding: 15px 10px;
@@ -263,16 +174,15 @@ footer h3 {
 
 	.logo {
 		max-width: 150px;
-		margin-bottom: 15px;
 	}
 
 	.container {
 		padding: 20px 15px;
 		margin: 15px 0;
-		border-radius: 8px;
 	}
 
-	.input-row {
+	.input-row,
+	.button-row {
 		flex-direction: column;
 		gap: 15px;
 	}
@@ -284,51 +194,5 @@ footer h3 {
 	button {
 		width: 100%;
 		padding: 18px;
-		font-size: 1.1rem;
-	}
-
-	details {
-		margin-bottom: 15px;
-	}
-
-	summary {
-		padding: 8px 0;
-		font-size: 1rem;
-	}
-
-	h1 {
-		margin-bottom: 8px;
-	}
-
-	h2 {
-		margin-bottom: 20px;
-	}
-}
-
-@media (max-width: 480px) {
-	body {
-		padding: 10px 5px;
-	}
-
-	.container {
-		padding: 15px 12px;
-		margin: 10px 0;
-	}
-
-	.logo {
-		max-width: 120px;
-	}
-
-	h1 {
-		font-size: 1.5rem;
-	}
-
-	ul {
-		padding-left: 20px;
-	}
-
-	footer {
-		padding: 20px 10px 15px;
-		font-size: 0.8rem;
 	}
 }
